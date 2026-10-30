@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ivan Shastin — Senior Software Engineer, Dublin</title>
+<meta name="description" content="Ivan Shastin, Senior Software Engineer at Microsoft, Greater Dublin, Ireland.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f6f3ec;--ink:#141310;--mute:#5e5a50;--rule:#d9d3c5;--accent:#e2471f;--accent2:#1f4fe2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.serif,h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:600;letter-spacing:-.025em;line-height:1.02}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:8px 14px;z-index:99}.skip:focus{left:8px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+/* Top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(246,243,236,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.brand{font-family:Fraunces,serif;font-weight:800;font-size:22px;text-decoration:none}
+.brand i{color:var(--accent);font-style:normal}
+.top nav{display:flex;gap:26px;font-size:15px}
+.top nav a{text-decoration:none;position:relative}
+.top nav a::after{content:"";position:absolute;left:0;bottom:-3px;height:1.5px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.top nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--accent);width:0}
+/* Hero */
+.hero{padding:72px 0 40px}
+.kicker{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:10px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.hero h1{font-size:clamp(64px,12vw,180px);font-weight:800;margin:28px 0 10px}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:inline-block;transform:translateY(105%);animation:up 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 .line:nth-child(2) span{animation-delay:.12s;font-style:italic;font-weight:400}
+.hero h1 .dot{color:var(--accent)}
+@keyframes up{to{transform:none}}
+.hero-grid{display:grid;grid-template-columns:1fr 1.25fr 300px;gap:40px;border-top:1px solid var(--rule);padding-top:28px;margin-top:20px}
+.hero-grid .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.role-big{font-family:Fraunces,serif;font-size:30px;line-height:1.15}
+.about{font-size:19px}
+.about::first-letter{font-family:Fraunces,serif;float:left;font-size:72px;line-height:.8;padding:8px 10px 0 0;color:var(--accent);font-weight:800}
+.photo{aspect-ratio:4/5;border:1px solid var(--ink);display:grid;place-items:center;position:relative;background:repeating-linear-gradient(135deg,transparent 0 10px,rgba(20,19,16,.05) 10px 11px)}
+.photo .mono{font-family:Fraunces,serif;font-size:110px;font-weight:800;font-style:italic}
+.photo .tag{position:absolute;bottom:10px;left:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:var(--paper);border:1px dashed var(--ink);padding:4px 8px}
+.facts{display:flex;gap:24px;margin-top:20px;font-size:15px;color:var(--mute);flex-wrap:wrap}
+.facts b{color:var(--ink);font-family:Fraunces,serif;font-size:28px;display:block;line-height:1}
+/* Magnetic buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:999px;border:1.5px solid var(--ink);text-decoration:none;font-weight:600;transition:background .3s,color .3s;will-change:transform}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+.btn:not(.solid):hover{background:var(--ink);color:var(--paper)}
+.btn .arr{display:inline-block;transition:transform .3s}.btn:hover .arr{transform:translateX(4px) rotate(-45deg)}
+.ctas{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+/* Marquee */
+.marquee{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);overflow:hidden;padding:18px 0;margin:60px 0 0;background:var(--ink);color:var(--paper)}
+.marquee .track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.marquee span{font-family:Fraunces,serif;font-size:clamp(32px,5vw,64px);padding:0 28px;white-space:nowrap;font-style:italic}
+.marquee span sup{font-family:"Inter Tight";font-style:normal;font-size:.32em;color:var(--accent);vertical-align:super;margin-left:4px}
+.marquee span::after{content:"✦";font-style:normal;margin-left:56px;color:var(--accent);font-size:.5em;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* Sections */
+section{padding:120px 0}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:40px;margin-bottom:56px;align-items:end}
+.sec-head .no{font-family:Fraunces,serif;font-size:15px;color:var(--accent);border-top:2px solid var(--ink);padding-top:10px}
+.sec-head h2{font-size:clamp(48px,8vw,112px)}
+/* Timeline (vertical, draw-on-scroll) */
+.timeline{position:relative;display:grid;gap:0}
+.timeline svg{position:absolute;left:calc(200px + 20px);top:0;height:100%;width:4px;overflow:visible}
+.timeline .path{stroke:var(--ink);stroke-width:2;fill:none}
+.timeline .ghost{stroke:var(--rule);stroke-width:2}
+.item{display:grid;grid-template-columns:200px 1fr;gap:80px;padding:34px 0;border-bottom:1px solid var(--rule);position:relative}
+.item .yr{font-family:Fraunces,serif;font-size:56px;font-weight:800;line-height:1;color:var(--ink)}
+.item .yr small{display:block;font-family:"Inter Tight";font-size:13px;font-weight:500;color:var(--mute);margin-top:8px;letter-spacing:.06em}
+.item::before{content:"";position:absolute;left:calc(200px + 14px);top:46px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);transition:background .4s,transform .4s;z-index:1}
+.item.on::before{background:var(--accent);border-color:var(--accent);transform:scale(1.25)}
+.item h3{font-size:clamp(28px,3.4vw,44px)}
+.item .co{font-size:20px;margin-top:6px}.item .co em{color:var(--accent);font-style:normal;font-weight:600}
+.item .meta{color:var(--mute);font-size:15px;margin-top:4px}
+.item p{margin-top:12px;max-width:640px}
+.ph{display:inline-block;border:1px dashed var(--mute);color:var(--mute);font-size:14px;padding:4px 10px;margin-top:12px}
+/* Education */
+.edu{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink)}
+.edu article{padding:36px 36px 36px 0;border-bottom:1px solid var(--rule)}
+.edu article+article{padding-left:36px;border-left:1px solid var(--rule)}
+.edu .when{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.edu h3{font-size:30px;margin:10px 0}
+.edu .deg{font-family:Fraunces,serif;font-style:italic;font-size:20px}
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));border-top:2px solid var(--ink)}
+.sk{padding:24px 20px 22px 0;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:2px;position:relative}
+.sk .n{font-family:Fraunces,serif;font-size:30px}
+.sk .c{font-size:14px;color:var(--mute);font-variant-numeric:tabular-nums}
+.sk .meter{position:absolute;left:0;bottom:-1px;height:3px;background:var(--accent);width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.skills-note{font-size:14px;color:var(--mute);margin-top:16px}
+/* Contact */
+.contact{background:var(--ink);color:var(--paper);padding:120px 0;text-align:left}
+.contact h2{font-size:clamp(56px,11vw,160px);font-weight:800}
+.contact h2 em{color:var(--accent);font-weight:400}
+.contact p{max-width:560px;color:#bfb9aa;margin:24px 0 36px;font-size:20px}
+.contact .btn{border-color:var(--paper);color:var(--paper)}
+.contact .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+footer{background:var(--ink);color:#8d877a;border-top:1px solid #2a2823;padding:28px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+/* Reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media (max-width:960px){.hero-grid{grid-template-columns:1fr 1fr}.hero-grid .photo-col{grid-column:1/-1;max-width:300px}}
+@media (max-width:720px){body{font-size:17px}.wrap{padding:0 20px}.top nav{gap:14px;font-size:14px}.top nav a:nth-child(3){display:none}.hero-grid,.edu{grid-template-columns:1fr}.edu article+article{padding-left:0;border-left:0}.sec-head{grid-template-columns:1fr;gap:10px}.timeline svg{left:6px}.item{grid-template-columns:1fr;gap:10px;padding-left:36px}.item::before{left:0;top:40px}.item .yr{font-size:40px}section{padding:80px 0}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.hero h1 .line span{transform:none}.rv{opacity:1;transform:none}.marquee .track{transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="#top">I<i>.</i>S</a><nav aria-label="Primary"><a href="#career">Career</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div><div class="progress" id="progress"></div></header>
+<main id="main">
+<section class="hero wrap" id="top" style="padding-bottom:0">
+  <div class="kicker"><span>Portfolio · Vol. 01</span><span>Greater Dublin, Ireland</span></div>
+  <h1 aria-label="Ivan Shastin"><span class="line"><span>Ivan</span></span><span class="line"><span>Shastin<span class="dot">.</span></span></span></h1>
+  <div class="hero-grid">
+    <div class="rv">
+      <div class="lbl">Currently</div>
+      <div class="role-big">Senior Software Engineer at Microsoft</div>
+      <div class="facts"><div><b>500+</b>connections</div><div><b>1,147</b>followers</div></div>
+      <div class="ctas"><a class="btn solid magnetic" href="https://www.linkedin.com/in/ivan-shastin-238b1a27/" target="_blank" rel="noopener">LinkedIn <span class="arr">→</span></a><a class="btn magnetic" href="#career">Career <span class="arr">→</span></a></div>
+    </div>
+    <div class="rv">
+      <div class="lbl">About</div>
+      <p class="about">Experienced Software Developer who can bring a diverse skill set and creative drive to software application development. Proficient in designing and writing code in various languages, and feature development and implementation. Strong written and verbal communication skills</p>
+    </div>
+    <div class="rv photo-col"><div class="photo" role="img" aria-label="Photo placeholder"><span class="mono">IS</span><span class="tag">Photo placeholder</span></div></div>
+  </div>
+</section>
+<div class="marquee" aria-label="Skills: C#, JavaScript, Node.js, Python, Express.js, TypeScript, Go, Git, Docker, Redis"><div class="track" id="track" aria-hidden="true"></div></div>
+
+<section id="career" class="wrap">
+  <div class="sec-head rv"><span class="no">01 — Career</span><h2>2009 → today</h2></div>
+  <div class="timeline" id="timeline">
+    <svg aria-hidden="true" preserveAspectRatio="none"><line class="ghost" x1="2" y1="0" x2="2" y2="100%"/><line class="path" id="draw" x1="2" y1="0" x2="2" y2="100%"/></svg>
+    <article class="item"><div class="yr">2018<small>JUN 2018 – PRESENT</small></div><div><h3>Senior Software Engineer</h3><div class="co"><em>Microsoft</em> · Full-time</div><div class="meta">Greater Dublin, Ireland</div><span class="ph">[Placeholder: team, product area &amp; impact — to be confirmed]</span></div></article>
+    <article class="item"><div class="yr">2017<small>DEC 2017 – JUN 2018</small></div><div><h3>Senior Software Developer</h3><div class="co"><em>SAP Concur</em></div><div class="meta">Prague, Czech Republic</div></div></article>
+    <article class="item"><div class="yr">2017<small>SEP 2017 – DEC 2017</small></div><div><h3>Full Stack Developer</h3><div class="co"><em>MSD</em></div><div class="meta">Prague, Czech Republic</div></div></article>
+    <article class="item"><div class="yr">2015<small>JUL 2015 – AUG 2017</small></div><div><h3>Software Developer</h3><div class="co"><em>DHL IT Services</em></div><div class="meta">Prague, Czech Republic</div></div></article>
+    <article class="item"><div class="yr">2009<small>NOV 2009 – JUL 2015</small></div><div><h3>End User Services Team Leader</h3><div class="co"><em>Fujitsu</em></div><div class="meta">Kazan, Russia</div><p>Hosted Shared and Hosted Virtual Desktop design and implementation.</p></div></article>
+  </div>
+</section>
+
+<section id="education" class="wrap" style="padding-top:40px">
+  <div class="sec-head rv"><span class="no">02 — Education</span><h2>Studied</h2></div>
+  <div class="edu">
+    <article class="rv"><div class="when">2008 – 2011</div><h3>Kazan National Research Technical University named after A.N. Tupolev – KAI</h3><div class="deg">Master's degree</div><div>Computer and Information Systems Security / Information Assurance</div></article>
+    <article class="rv"><div class="when">2002 – 2008</div><h3>Kazan State University</h3><div class="deg">Engineer's degree</div><div>Mathematics</div></article>
+  </div>
+</section>
+
+<section id="skills" class="wrap" style="padding-top:40px">
+  <div class="sec-head rv"><span class="no">03 — Skills</span><h2>Toolkit</h2></div>
+  <div class="skills" id="skillgrid"></div>
+  <p class="skills-note">Underline length reflects LinkedIn endorsements.</p>
+</section>
+</main>
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="rv">Let's <em>connect.</em></h2>
+    <p class="rv">Questions, ideas or opportunities — send me a message on LinkedIn.</p>
+    <a class="btn magnetic rv" href="https://www.linkedin.com/in/ivan-shastin-238b1a27/" target="_blank" rel="noopener">linkedin.com/in/ivan-shastin <span class="arr">→</span></a>
+  </div>
+</section>
+<footer><div class="wrap"><span>© <span id="y">2026</span> Ivan Shastin</span><span>Greater Dublin, Ireland</span></div></footer>
+<script>
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.getElementById('y').textContent=new Date().getFullYear();
+const skills=[["C#",11],["JavaScript",8],["Node.js",6],["Python",5],["Express.js",4],["TypeScript",4],["Go",3],["Git",3],["Docker",3],["Redis",1]];
+const one=skills.map(([n,c])=>`<span>${n}<sup>${c}</sup></span>`).join('');document.getElementById('track').innerHTML=one+one;
+const grid=document.getElementById('skillgrid');
+skills.forEach(([n,c])=>grid.insertAdjacentHTML('beforeend',`<div class="sk rv"><span class="n">${n}</span><span class="c">${c} endorsement${c>1?'s':''}</span><span class="meter" data-w="${c/11*100}"></span></div>`));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');const m=e.target.querySelector('.meter');if(m)setTimeout(()=>m.style.width=m.dataset.w+'%',200);io.unobserve(e.target)}),{threshold:.15});
+document.querySelectorAll('.rv').forEach((el,i)=>{if(!RM)el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+// Draw-on-scroll line + active dots + top progress
+const tl=document.getElementById('timeline'),line=document.getElementById('draw'),items=[...tl.querySelectorAll('.item')],bar=document.getElementById('progress');
+function onScroll(){const r=tl.getBoundingClientRect(),h=r.height,vh=innerHeight;const p=RM?1:Math.max(0,Math.min(1,(vh*.6-r.top)/h));line.setAttribute('y2',(p*h)+'');items.forEach(it=>{const ir=it.getBoundingClientRect();it.classList.toggle('on',RM||ir.top+46<vh*.6)});const d=document.documentElement;bar.style.width=(d.scrollTop/(d.scrollHeight-vh)*100)+'%'}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+// Magnetic buttons
+if(!RM&&matchMedia('(pointer:fine)').matches){document.querySelectorAll('.magnetic').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();const x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform=`translate(${x*.3}px,${y*.4}px)`});b.addEventListener('mouseleave',()=>{b.style.transition='transform .5s cubic-bezier(.2,.8,.2,1),background .3s,color .3s';b.style.transform='';setTimeout(()=>b.style.transition='',500)})})}
+</script>
+</body>
+</html>
